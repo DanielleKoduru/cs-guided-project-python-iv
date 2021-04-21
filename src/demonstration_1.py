@@ -21,6 +21,27 @@ Output: "llama"
 string objects in Python. Think about how character encoding works and explore
 if there is a mathematical approach that you can take.*
 """
-def to_lower_case(string):
-    # Your code here
+def to_lower_case_old(string):
+    new_str = ""
+    for char in string: #for num in string.encode()
+        num = ord(char)
+        if 65 <= num and num <= 90:
+            num += 32
+        new_str += chr(num)
 
+    return new_str
+
+
+def to_lower_case(string):
+    new_str = ""
+    for num in string.encode():
+        if 65 <= num and num <= 90:
+            num += 32
+        new_str += chr(num)
+
+    return new_str
+
+
+print(to_lower_case("Hello World"))
+print(to_lower_case("LambdaSchool"))
+print(to_lower_case("LAMBDAAA"))
